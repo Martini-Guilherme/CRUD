@@ -1,0 +1,17 @@
+{
+    "name": "stanco/crud",
+    "description": "CRUD para Menvie",
+    "type": "project",
+    "require": {
+        "twbs/bootstrap": "^3.3@dev",
+        "components/jquery": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guilherme Martini",
+            "email": "guilhermemartini2000@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

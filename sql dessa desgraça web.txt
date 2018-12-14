@@ -1,0 +1,57 @@
+create table professor(
+	idprofessor bigint auto_increment,
+	nome varchar(30) not null,
+	sexo varchar(30) not null,
+	datanasc varchar(30) not null,
+    cpf char(14) not null,
+    endereco varchar(100) not null,
+    cep char(9),
+	primary key(idprofessor)
+);
+
+create table turma(
+	idturma bigint auto_increment,
+	materia varchar(30) not null,
+	idprofessor bigint not null,
+	primary key(idturma),
+	foreign key(idprofessor) references professor(idprofessor)
+);
+
+create table aluno(
+	idaluno bigint auto_increment,
+	nome varchar(30) not null,
+	sexo varchar(30) not null,
+	datanasc varchar(30) not null,
+    cpf char(14) not null,
+    endereco varchar(100) not null,
+    cep char(9),
+    n1 double(10,2),
+    n2 double(10,2),
+    idturma bigint not null,
+	primary key(idaluno),
+	foreign key(idturma) references turma(idturma)
+);
+
+create table funcionario(
+	idfuncionario bigint auto_increment,
+	nome varchar(30) not null,
+	sexo varchar(30) not null,
+	datanasc varchar(30) not null,
+    cargo varchar(30) not null,
+    cpf char(14) not null,
+    endereco varchar(100) not null,
+    cep char(9),	
+	primary key(idfuncionario)
+);
+
+
+create table usuario(
+	idUsuario bigint auto_increment,
+	login varchar(30) not null,
+	senha varchar(100) not null,
+	tipo varchar(25) not null,
+	PRIMARY KEY (idUsuario));
+
+
+  insert into usuario(idUsuario,login,senha, tipo)
+  values(null,"admin", "admin", "adm");
